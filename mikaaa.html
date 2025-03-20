@@ -5,74 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Valentine's Day</title>
   <style>
+    /* Global Styles */
     body {
-      background-color: #efdff5;
+      background-image: url('https://wallpaperaccess.com/full/6396782.jpg'); /* Replace with your desired GIF URL */
+      background-size: cover; /* Ensures the GIF covers the entire screen */
+      background-position: center center; /* Centers the GIF */
+      background-repeat: no-repeat; /* Prevents the GIF from repeating */
       font-family: 'Press Start 2P', cursive;
       text-align: center;
       padding: 50px;
-      color: #615ac2;
+      color: #000000;
       margin: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      overflow: hidden;
     }
-    h1 {
-      color: #bd93f3c2;
-      font-size: 2.5em;
-      letter-spacing: 2px;
+    h1, h2 {
+      color: #e9c1dc;
+      font-size: 3rem;
+      letter-spacing: 1px;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     }
     p {
-      font-size: 1.5em;
-      color: #138392;
+      font-size: 1.5rem;
+      color: #ffffff;
       margin-bottom: 40px;
+      line-height: 1.6;
     }
     .heart {
-      color: #a04b74;
-      font-size: 80px;
+      color: #f065e4;
+      font-size: 100px;
       animation: bounce 1s infinite;
       margin-bottom: 30px;
     }
+
+    /* Bouncing Heart Animation */
     @keyframes bounce {
       0%, 100% {
         transform: translateY(0);
       }
       50% {
-        transform: translateY(-10px);
+        transform: translateY(-20px);
       }
     }
+
+    /* Button Styling */
+    .btn {
+      background-color: #7047a5;
+      color: rgb(253, 253, 253);
+      padding: 18px 36px;
+      font-size: 1.4em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      margin-top: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .btn:hover {
+      background-color: #a773b4;
+      transform: scale(1.05);
+    }
+
+    /* Countdown and Dynamic Text */
     .countdown {
       font-size: 1.2em;
-      color: #b44f71;
+      color: #f4a7d1;
       font-weight: bold;
       text-shadow: 1px 1px 3px rgba(29, 14, 14, 0.3);
     }
-    /* Page transitions */
+
+    /* Page Transitions */
     .page {
       display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
     }
     .active {
       display: block;
+      opacity: 1;
     }
-    /* Button styling */
-    .btn {
-      background-color: #7d9c73;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.5em;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      margin-top: 20px;
-    }
-    .btn:hover {
-      background-color: #084426;
-    }
-    /* Photo gallery */
+
+    /* Photo Gallery */
     .photo-gallery {
       display: flex;
       flex-wrap: wrap;
@@ -81,29 +99,44 @@
       margin: 30px 0;
     }
     .photo-gallery img {
-      width: 200px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
       object-fit: cover;
       border-radius: 15px;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .photo-gallery img:hover {
       transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
-    /* Responsive design */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2em;
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1, h2 {
+        font-size: 2rem;
       }
       .heart {
-        font-size: 60px;
+        font-size: 80px;
       }
       p {
-        font-size: 1.2em;
+        font-size: 1.3rem;
       }
       .photo-gallery img {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 20px;
+      }
+      h1, h2 {
+        font-size: 1.6rem;
+      }
+      .btn {
+        font-size: 1.2em;
+        padding: 12px 24px;
       }
     }
   </style>
@@ -112,133 +145,116 @@
 <body>
   <!-- Page 1: Welcome and Days Since Dating -->
   <div id="page1" class="page active">
-    <h1>Happy Valentine's Day, Mika!</h1>
-    <p>Here's a little surprise just for you...</p>
-    <div class="heart">🌸</div>
-    <button class="btn" onclick="nextPage(2)">start</button>
+    <h1>🪻Happy Anniversary, Mika!🌿</h1>
+    <p>.</p>
+    <div class="heart">🐧</div>
+    <button class="btn" onclick="nextPage(2)">Start</button>
   </div>
 
   <!-- Page 2: Secret Note -->
   <div id="page2" class="page">
     <div class="countdown">
-        <h2>Did you know that...</h2>
-        <p id="daysSince">Loading...</p>
-      </div>
+      <h2>Did you know that it has been</h2>
+      <p id="daysSince">Loading...</p>
+    </div>
     <button class="btn" onclick="previousPage(1)">Back</button>
     <button class="btn" onclick="nextPage(3)">Next</button>
-
   </div>
+
   <!-- Page 3: Photo Gallery -->
   <div id="page3" class="page">
-    <h2>some of our Special Moments</h2>
+    <h2>Some of Our Cute Moments</h2>
     <div class="photo-gallery">
-      <img src="universal.png" alt="Photo 1">
-      <img src="https://via.placeholder.com/200" alt="Photo 2">
-      <img src="https://via.placeholder.com/200" alt="Photo 3">
-      <img src="https://via.placeholder.com/200" alt="Photo 4">
-      <img src="https://via.placeholder.com/200" alt="Photo 1">
-      <img src="https://via.placeholder.com/200" alt="Photo 2">
+      <img src="https://via.placeholder.com/250" alt="">
+      <img src="https://via.placeholder.com/250" alt="">
+      <img src="https://via.placeholder.com/250" alt="">
+      <img src="https://via.placeholder.com/250" alt="">
+      <img src="https://via.placeholder.com/250" alt="">
     </div>
     <button class="btn" onclick="previousPage(2)">Back</button>
     <button class="btn" onclick="nextPage(4)">Next</button>
   </div>
 
-  <!-- Page 3: Photo Gallery -->
+  <!-- Page 4: More Special Moments -->
   <div id="page4" class="page">
-    <h2>more special Moments</h2>
+    <h2>More Special Moments</h2>
     <div class="photo-gallery">
-      <img src="https://via.placeholder.com/200" alt="Photo 1">
-      <img src="https://via.placeholder.com/200" alt="Photo 2">
-      <img src="https://via.placeholder.com/200" alt="Photo 3">
-      <img src="https://via.placeholder.com/200" alt="Photo 4">
+      <img src="https://via.placeholder.com/250" alt="">
+      <img src="https://via.placeholder.com/250" alt="">
+      <img src="https://via.placeholder.com/250" alt="">
+      <img src="https://via.placeholder.com/250" alt="">
     </div>
-    <button class="btn" onclick="previousPage(2)">Back</button>
+    <button class="btn" onclick="previousPage(3)">Back</button>
     <button class="btn" onclick="nextPage(5)">Next</button>
   </div>
 
-  <!-- Page 4: Valentine's Day Quiz -->
+  <!-- Page 5: Valentine's Day Quiz -->
   <div id="page5" class="page">
-    <h2>Valentine's Day Quiz!</h2>
-    <p>What's my favorite color?</p>
+    <h2>random quiz time (cus why not!)</h2>
+    <p>What's the name of our 1st spotify playlist ?</p>
     <button class="btn" onclick="quizAnswer('purple')">Purple</button>
     <button class="btn" onclick="quizAnswer('blue')">Blue</button>
     <button class="btn" onclick="quizAnswer('green')">Green</button>
     <p id="quizResult"></p>
-    <button class="btn" onclick="previousPage(3)">Back</button>
+    <button class="btn" onclick="previousPage(4)">Back</button>
     <button class="btn" onclick="nextPage(6)">Next</button>
   </div>
 
-  <!-- Page 5: Final Page -->
+  <!-- Page 6: Memory Lane Quiz -->
   <div id="page6" class="page">
-    <h2>Thank You for Celebrating with Me!</h2>
-    <p>You are my everything, Mika. Here's to many more amazing moments together.</p>
-    <button class="btn" onclick="previousPage(5)">Back</button>
-    <button class="btn" onclick="nextPage(7)">Start Over</button>
-  </div>
-
-  <!-- Page 7: Memory Lane Quiz -->
-<div id="page7" class="page">
     <h2>Memory Lane Quiz!</h2>
-    <p>Let's see how well you remember our special moments together!</p>
     <p>What was the first movie we watched together?</p>
     <button class="btn" onclick="memoryLaneAnswer('Inception')">Inception</button>
     <button class="btn" onclick="memoryLaneAnswer('Titanic')">Titanic</button>
     <button class="btn" onclick="memoryLaneAnswer('The Notebook')">The Notebook</button>
     <p id="memoryLaneResult"></p>
-    <button class="btn" onclick="previousPage(6)">Back</button>
-    <button class="btn" onclick="nextPage(8)">Next</button>
+    <button class="btn" onclick="previousPage(5)">Back</button>
+    <button class="btn" onclick="nextPage(7)">Next</button>
   </div>
-  
-  <!-- Page 8: Virtual Gift -->
-  <div id="page8" class="page">
+
+  <!-- Page 7: Virtual Gift -->
+  <div id="page7" class="page">
     <h2>Choose a Virtual Gift!</h2>
     <p>Select a gift for me:</p>
     <button class="btn" onclick="selectGift('Heart')">💖 Heart</button>
     <button class="btn" onclick="selectGift('Teddy Bear')">🧸 Teddy Bear</button>
     <button class="btn" onclick="selectGift('Bouquet')">💐 Bouquet</button>
     <p id="giftSelection"></p>
-    <button class="btn" onclick="previousPage(7)">Back</button>
-    <button class="btn" onclick="nextPage(9)">Next</button>
+    <button class="btn" onclick="previousPage(6)">Back</button>
+    <button class="btn" onclick="nextPage(8)">Next</button>
   </div>
-  
-  <!-- Page 9: Love Letter -->
-  <div id="page9" class="page">
+
+  <!-- Page 8: Love Letter -->
+  <div id="page8" class="page">
     <h2>Write a Love Letter</h2>
-    <p>Type a sweet message for me:</p>
+    <p>Type a sweet message:</p>
     <textarea id="loveLetter" rows="4" cols="50" placeholder="Write something special..."></textarea>
     <button class="btn" onclick="submitLetter()">Send Letter</button>
     <p id="letterResult"></p>
-    <button class="btn" onclick="previousPage(8)">Back</button>
-    <button class="btn" onclick="nextPage(10)">Next</button>
+    <button class="btn" onclick="previousPage(7)">Back</button>
+    <button class="btn" onclick="nextPage(9)">Next</button>
   </div>
-  
-  <!-- Page 10: Final Surprise -->
-  <div id="page10" class="page">
+
+  <!-- Page 9: Final Surprise -->
+  <div id="page9" class="page">
     <h2>Here's Your Final Surprise!</h2>
     <p>You've completed the Valentine's Day adventure! 💖</p>
     <div class="heart">🌹</div>
     <p>Thank you for celebrating with me! Let's make more memories together.</p>
-    <button class="btn" onclick="previousPage(9)">Back</button>
+    <button class="btn" onclick="previousPage(8)">Back</button>
     <button class="btn" onclick="nextPage(1)">Start Over</button>
   </div>
-  
 
   <script>
-    // Date when you started dating
     const startDate = new Date('March 20, 2024');
-
-    // Function to calculate days since the start date
     function calculateDays() {
       const today = new Date();
       const timeDifference = today - startDate;
-      const dayDifference = Math.floor(timeDifference / (1000 * 3600 * 24)); // Convert ms to days
+      const dayDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
       return dayDifference;
     }
-
-    // Display the number of days on the page
     document.getElementById('daysSince').innerText = `${calculateDays()} days since we started dating!`;
 
-    // Handle quiz answers
     function quizAnswer(answer) {
       const result = document.getElementById('quizResult');
       if (answer === 'purple') {
@@ -250,45 +266,39 @@
       }
     }
 
-    // Memory Lane Quiz Answer
-function memoryLaneAnswer(answer) {
-  const result = document.getElementById('memoryLaneResult');
-  if (answer === 'Inception') {
-    result.innerText = 'Correct! You remember! 🎬';
-    result.style.color = 'green';
-  } else {
-    result.innerText = 'Oops! That’s not it! Try again! 💕';
-    result.style.color = 'red';
-  }
-}
+    function memoryLaneAnswer(answer) {
+      const result = document.getElementById('memoryLaneResult');
+      if (answer === 'Inception') {
+        result.innerText = 'Correct! You remember! 🎬';
+        result.style.color = 'green';
+      } else {
+        result.innerText = 'Oops! That’s not it! Try again! 💕';
+        result.style.color = 'red';
+      }
+    }
 
-// Virtual Gift Selection
-function selectGift(gift) {
-  const giftSelection = document.getElementById('giftSelection');
-  giftSelection.innerText = `You chose the ${gift}! 🎁`;
-}
+    function selectGift(gift) {
+      const giftSelection = document.getElementById('giftSelection');
+      giftSelection.innerText = `You chose the ${gift}! 🎁`;
+    }
 
-// Love Letter Submission
-function submitLetter() {
-  const loveLetter = document.getElementById('loveLetter').value;
-  const letterResult = document.getElementById('letterResult');
-  if (loveLetter) {
-    letterResult.innerText = `Your letter was sent! 💌`;
-    letterResult.style.color = 'green';
-  } else {
-    letterResult.innerText = 'Please write something first! ✍️';
-    letterResult.style.color = 'red';
-  }
-}
+    function submitLetter() {
+      const loveLetter = document.getElementById('loveLetter').value;
+      const letterResult = document.getElementById('letterResult');
+      if (loveLetter) {
+        letterResult.innerText = `Your letter was sent! 💌`;
+        letterResult.style.color = 'green';
+      } else {
+        letterResult.innerText = 'Please write something first! ✍️';
+        letterResult.style.color = 'red';
+      }
+    }
 
-
-    // Show the next page and hide the current one
     function nextPage(pageNumber) {
       document.querySelector('.active').classList.remove('active');
       document.getElementById('page' + pageNumber).classList.add('active');
     }
 
-    // Show the previous page and hide the current one
     function previousPage(pageNumber) {
       document.querySelector('.active').classList.remove('active');
       document.getElementById('page' + pageNumber).classList.add('active');
