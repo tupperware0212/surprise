@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Aniversary</title>
+  <title>Happy Valentine's Day</title>
   <style>
     /* Global Styles */
     body {
@@ -161,40 +161,40 @@
     <button class="btn" onclick="nextPage(3)">Next</button>
   </div>
 
-  <!-- Page 3: Photo Gallery -->
-  <div id="page3" class="page">
-    <h2>Some of Our Cute Moments</h2>
-    <div class="photo-gallery">
-      <img src="umiversal.png" alt="">
-      <img src="stardew.png" alt="">
-      <img src="IMG_6260.jpg" alt="">
-      <img src="sgswgfsr.png" alt="">
-      <img src="val.png" alt="">
-    </div>
-    <button class="btn" onclick="previousPage(2)">Back</button>
-    <button class="btn" onclick="nextPage(4)">Next</button>
+<!-- Page 3: Photo Gallery -->
+<div id="page3" class="page">
+  <h2>Some of Our Cute Moments</h2>
+  <div class="photo-gallery">
+    <img src="umiversal.png" alt="">
+    <img src="stardew.png" alt="">
+    <img src="IMG_6260.jpg" alt="">
+    <img src="sgswgfsr.png" alt="">
+    <img src="val.png" alt="">
   </div>
+  <button class="btn" onclick="previousPage(2)">Back</button>
+  <button class="btn" onclick="nextPage(4)">Next</button>
+</div>
 
-  <!-- Page 4: More Special Moments -->
-  <div id="page4" class="page">
-    <h2>More Special Moments</h2>
-    <div class="photo-gallery">
-      <img src="universal.png" alt="universal date">
-      <img src="val2.png" alt="matching <3">
-      <img src="milk.png" alt="our spotify playlist">
-      <img src="IMG_7669.jpg" alt="music lessons">
-    </div>
-    <button class="btn" onclick="previousPage(3)">Back</button>
-    <button class="btn" onclick="nextPage(5)">Next</button>
+<!-- Page 4: More Special Moments -->
+<div id="page4" class="page">
+  <h2>More Special Moments</h2>
+  <div class="photo-gallery">
+    <img src="universal.png" alt="universal date">
+    <img src="val2.png" alt="matching <3">
+    <img src="milk.png" alt="our spotify playlist">
+    <img src="IMG_7669.jpg" alt="music lessons">
   </div>
+  <button class="btn" onclick="previousPage(3)">Back</button>
+  <button class="btn" onclick="nextPage(5)">Next</button>
+</div>
 
   <!-- Page 5: Valentine's Day Quiz -->
   <div id="page5" class="page">
     <h2>random quiz time (cus why not!)</h2>
     <p>What's the name of our 1st spotify playlist ?</p>
-    <button class="btn" onclick="quizAnswer('purple')">Purple</button>
-    <button class="btn" onclick="quizAnswer('blue')">Blue</button>
-    <button class="btn" onclick="quizAnswer('green')">Green</button>
+    <button class="btn" onclick="quizAnswer('milkandtaro')">milkandtaro</button>
+    <button class="btn" onclick="quizAnswer('containermilk')">containermilk</button>
+    <button class="btn" onclick="quizAnswer('milk containers')">milk containers</button>
     <p id="quizResult"></p>
     <button class="btn" onclick="previousPage(4)">Back</button>
     <button class="btn" onclick="nextPage(6)">Next</button>
@@ -203,10 +203,10 @@
   <!-- Page 6: Memory Lane Quiz -->
   <div id="page6" class="page">
     <h2>Memory Lane Quiz!</h2>
-    <p>What was the first movie we watched together?</p>
-    <button class="btn" onclick="memoryLaneAnswer('Inception')">Inception</button>
-    <button class="btn" onclick="memoryLaneAnswer('Titanic')">Titanic</button>
-    <button class="btn" onclick="memoryLaneAnswer('The Notebook')">The Notebook</button>
+    <p>who is our first child?</p>
+    <button class="btn" onclick="memoryLaneAnswer('Millie')">Millie</button>
+    <button class="btn" onclick="memoryLaneAnswer('Dyne')">Dyne</button>
+    <button class="btn" onclick="memoryLaneAnswer('Liliac')">Liliac</button>
     <p id="memoryLaneResult"></p>
     <button class="btn" onclick="previousPage(5)">Back</button>
     <button class="btn" onclick="nextPage(7)">Next</button>
@@ -214,11 +214,11 @@
 
   <!-- Page 7: Virtual Gift -->
   <div id="page7" class="page">
-    <h2>Choose a Virtual Gift!</h2>
-    <p>Select a gift for me:</p>
-    <button class="btn" onclick="selectGift('Heart')">💖 Heart</button>
-    <button class="btn" onclick="selectGift('Teddy Bear')">🧸 Teddy Bear</button>
-    <button class="btn" onclick="selectGift('Bouquet')">💐 Bouquet</button>
+    <h2>Choose a Virtual date!</h2>
+    <p>Select activity :</p>
+    <button class="btn" onclick="selectGift('movie+chill')">💖 </button>
+    <button class="btn" onclick="selectGift('gaming time')">🧸 </button>
+    <button class="btn" onclick="selectGift('anything')">💐 </button>
     <p id="giftSelection"></p>
     <button class="btn" onclick="previousPage(6)">Back</button>
     <button class="btn" onclick="nextPage(8)">Next</button>
@@ -237,10 +237,10 @@
 
   <!-- Page 9: Final Surprise -->
   <div id="page9" class="page">
-    <h2>Here's Your Final Surprise!</h2>
-    <p>You've completed the Valentine's Day adventure! 💖</p>
+    <h2>Happy Aniversary baby >_<</h2>
+    <p>thank you for being here with me </p>
     <div class="heart">🌹</div>
-    <p>Thank you for celebrating with me! Let's make more memories together.</p>
+    <p> Let's make more memories together!! I love you sooooo much.</p>
     <button class="btn" onclick="previousPage(8)">Back</button>
     <button class="btn" onclick="nextPage(1)">Start Over</button>
   </div>
@@ -257,9 +257,9 @@
 
     function quizAnswer(answer) {
       const result = document.getElementById('quizResult');
-      if (answer === 'purple') {
-        result.innerText = 'Correct! You know me so well!';
-        result.style.color = 'green';
+      if (answer === 'milk containers') {
+        result.innerText = 'Correct! ';
+        result.style.color = 'white';
       } else {
         result.innerText = 'Oops! Try again! ❤️';
         result.style.color = 'red';
@@ -268,11 +268,11 @@
 
     function memoryLaneAnswer(answer) {
       const result = document.getElementById('memoryLaneResult');
-      if (answer === 'Inception') {
-        result.innerText = 'Correct! You remember! 🎬';
+      if (answer === 'Liliac') {
+        result.innerText = 'YAYYY! You remember!';
         result.style.color = 'green';
       } else {
-        result.innerText = 'Oops! That’s not it! Try again! 💕';
+        result.innerText = 'WRONG!!! Try again! 💕';
         result.style.color = 'red';
       }
     }
